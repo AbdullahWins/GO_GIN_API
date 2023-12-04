@@ -1,0 +1,8 @@
+Author: https://github.com/abdullahwins
+
+//todos
+router.GET("/todos", getTodos)
+router.GET("/todos/:id", getTodo)
+router.POST("/todos", createTodo) = { title, status }
+router.PATCH("/todos/:id", updateTodo)
+router.DELETE("/todos/:id", deleteTodo)
