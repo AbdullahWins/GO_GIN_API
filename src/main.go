@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 
+	database "crud/src/databases"
 	"crud/src/routes"
 
 	"github.com/joho/godotenv"
@@ -16,7 +17,16 @@ func main() {
 		fmt.Println("Error loading .env file")
 	}
 
-	port := getEnv("PORT", "5005")
+	// Initialize the database connection
+	err = database.ConnectDatabase()
+	if err != nil {
+		fmt.Println("Error connecting to the database:", err)
+		return
+	}
+
+	fmt.Println("Connected to the database!")
+
+	port := getEnv("PORT", "5000")
 
 	router := routes.SetupMainRoutes()
 

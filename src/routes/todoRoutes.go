@@ -2,7 +2,7 @@
 package routes
 
 import (
-	"crud/src/controllers"
+	controllers "crud/src/controllers"
 
 	"github.com/gin-gonic/gin"
 )

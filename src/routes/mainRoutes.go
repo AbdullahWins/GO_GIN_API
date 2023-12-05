@@ -12,10 +12,6 @@ func SetupMainRoutes() *gin.Engine {
 		c.JSON(200, gin.H{"message": "Hello, World!"})
 	})
 
-	router.GET("/api", func(c *gin.Context) {
-		c.JSON(200, gin.H{"message": "Hello world from api!"})
-	})
-
 	// Include other route setups
 	setupTodoRoutes(router)
 	setupTaskRoutes(router)

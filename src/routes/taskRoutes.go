@@ -2,7 +2,7 @@
 package routes
 
 import (
-	"crud/src/controllers"
+	controllers "crud/src/controllers"
 
 	"github.com/gin-gonic/gin"
 )
@@ -10,10 +10,10 @@ import (
 func setupTaskRoutes(router *gin.Engine) {
 	taskRouter := router.Group("/tasks")
 	{
-		taskRouter.GET("", controllers.GetTasks)
-		taskRouter.GET("/:id", controllers.GetTask)
-		taskRouter.POST("", controllers.CreateTask)
-		taskRouter.PATCH("/:id", controllers.UpdateTask)
-		taskRouter.DELETE("/:id", controllers.DeleteTask)
+		taskRouter.GET("", controllers.GetAllTasks)
+		taskRouter.GET("/:id", controllers.GetOneTask)
+		taskRouter.POST("", controllers.CreateOneTask)
+		taskRouter.PATCH("/:id", controllers.UpdateOneTask)
+		taskRouter.DELETE("/:id", controllers.DeleteOneTask)
 	}
 }
